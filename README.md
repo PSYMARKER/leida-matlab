@@ -192,3 +192,11 @@ For more detailed descriptions and applications, please refer to the following w
 > *Wan-wa Wong, Joana Cabral, Riddhi Rane, Ronald Ly, Morten L. Kringelbach and Jamie D. Feusner (2021). [Effects of visual attention modulation on dynamic functional connectivity during own-face viewing in body dysmorphic disorder](https://doi.org/10.1038/s41386-021-01039-w). **Neuropsychopharmacology***
 
 > *Ricardo Magalhães, Maria Picó-Pérez, Madalena Esteves, Rita Vieira, Teresa C. Castanho, Liliana Amorim, Mafalda Sousa, Ana Coelho, Henrique M. Fernandes, Joana Cabral, Pedro S. Moreira and Nuno Sousa (2021). [Habitual coffee drinkers display a distinct pattern of brain functional connectivity](https://doi.org/10.1038/s41380-021-01075-4). **Molecular psychiatry***
+
+---
+
+## License & copyright
+
+© Joana Cabral, University of Minho
+
+Licensed under the [MIT License](LICENSE).
