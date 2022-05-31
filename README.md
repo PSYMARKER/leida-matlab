@@ -167,13 +167,28 @@ Output:
 
 ## References
 
-For more detailed description and applications, please refer to the main reference for LEiDA:
+For more detailed descriptions and applications, please refer to the following works using the LEiDA algorithm:
 
 > *Joana Cabral, Diego Vidaurre, Paulo Marques, Ricardo Magalhães, Pedro Silva Moreira, José Miguel Soares, Gustavo Deco, Nuno Sousa and Morten L. Kringelbach (2017) [Cognitive performance in healthy older adults relates to spontaneous switching between states of functional connectivity during rest](https://doi.org/10.1038/s41598-017-05425-7). **Scientific Reports***
 
-An example application to study schizophrenia is shown in
-
 > *Miguel Farinha, Conceição Amado, Pedro Morgado and Joana Cabral (2022) [Increased Excursions to Functional Networks in Schizophrenia in the Absence of Task](https://doi.org/10.3389/fnins.2022.821179). **Frontiers in neuroscience***
 
+> *Lord, L. D., Expert, P., Atasoy, S., Roseman, L., Rapuano, K., Lambiotte, R., ... & Cabral, J. (2019). [Dynamical exploration of the repertoire of brain networks at rest is modulated by psilocybin] (https://doi.org/10.1016/j.neuroimage.2019.05.060). **Neuroimage**
 
+> *Figueroa, C. A., Cabral, J., Mocking, R. J., Rapuano, K. M., van Hartevelt, T. J., Deco, G., ... & Ruhé, H. G. (2019). [Altered ability to access a clinically relevant control network in patients remitted from major depressive disorder.] (https://doi.org/10.1002/hbm.24559) **Human Brain Mapping**
 
+> *Deco, G., Cruzat, J., Cabral, J., Tagliazucchi, E., Laufs, H., Logothetis, N. K., & Kringelbach, M. L. (2019). [Awakening: Predicting external stimulation to force transitions between different brain states]. (https://doi.org/10.1073/pnas.1905534116) **Proceedings of the National Academy of Sciences**
+
+> *Stark, E. A., Cabral, J., Riem, M. M., Van IJzendoorn, M. H., Stein, A., & Kringelbach, M. L. (2020). ]The power of smiling: the adult brain networks underlying learned infant emotionality] (https://doi.org/10.1093/cercor/bhz219). **Cerebral Cortex**
+
+> *Kringelbach, M. L., Cruzat, J., Cabral, J., Knudsen, G. M., Carhart-Harris, R., Whybrow, P. C., ... & Deco, G. (2020). [Dynamic coupling of whole-brain neuronal and neurotransmitter systems] (https://doi.org/10.1073/pnas.1921475117). **Proceedings of the National Academy of Sciences**
+
+> *Larabi, D. I., Renken, R. J., Cabral, J., Marsman, J. B. C., Aleman, A., & Ćurčić-Blake, B. (2020). [Trait self-reflectiveness relates to time-varying dynamics of resting state functional connectivity and underlying structural connectomes: Role of the default mode network]. **NeuroImage**
+
+> *Vohryzek, J., Deco, G., Cessac, B., Kringelbach, M. L., & Cabral, J. (2020). [Ghost Attractors in Spontaneous Brain Activity: Recurrent Excursions Into Functionally-Relevant BOLD Phase-Locking States]. **Frontiers in Systems Neuroscience**
+
+> *Alonso Martinez S, Deco G, Ter Horst GJ, Cabral J (2020) [The dynamics of functional brain networks associated with depressive symptoms in a nonclinical sample]. (https://doi.org/10.3389/fncir.2020.570583) **Front. Neural Circuits**
+
+> *Wong, W. W., Cabral, J., Rane, R., Ly, R., Kringelbach, M. L., & Feusner, J. D. (2021). [Effects of visual attention modulation on dynamic functional connectivity during own-face viewing in body dysmorphic disorder]. **Neuropsychopharmacology**
+
+> *Magalhães, R., Picó-Pérez, M., Esteves, M., Vieira, R., Castanho, T. C., Amorim, L., ... & Sousa, N. (2021). [Habitual coffee drinkers display a distinct pattern of brain functional connectivity]. **Molecular psychiatry**
