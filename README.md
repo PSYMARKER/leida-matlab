@@ -22,7 +22,7 @@ Then to install the LEiDA Toolbox, simply unzip the folder downloaded from the [
 
 ## LEiDA Start
 
-The function ***LEiDA_Start.m*** runs the first stage of the LEiDA analyses. This function is divided into two sections. The user is expected to only need to change the inputs in *Section A*.
+The function ***LEiDA_Start.m*** runs the first stage of the LEiDA analyses. This function is divided into three sections. The user is expected to only need to change the inputs in *Section A*.
 
 Input parameters:
 
@@ -124,7 +124,7 @@ The plots are saved in new directory created according to the value of K and the
 
 ## LEiDA Transitions K
 
-The function ***LEiDA_TransitionsK.m*** should be used to analyse the state-to-state transitions considering a state space of dimension to be defined by the user, i.e., by the value selected for K. This function is divided into two sections. The user is expected to only need to change the inputs in *Section A*.
+The function ***LEiDA_TransitionsK.m*** should be used to analyse the state-to-state transitions considering a state space of dimension to be defined by the user, i.e., by the value selected for K. This function is divided into three sections. The user is expected to only need to change the inputs in *Section A*.
 
 Input parameters:
 
@@ -146,7 +146,7 @@ Output:
 
 ## LEiDA State Time Courses
 
-The function ***LEiDA_TransitionsK.m*** should be used to analyse the state time courses defined for a specified value of K across participants and for a given subject. This function is divided into two sections. The user is expected to only need to change the inputs in *Section A*.
+The function ***LEiDA_StateTime.m*** should be used to analyse the state time courses defined for a specified value of K across participants and for a given subject. This function is divided into two sections. The user is expected to only need to change the inputs in *Section A*.
 
 Input parameters:
 

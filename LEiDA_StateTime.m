@@ -45,8 +45,7 @@ run_name = 'ABIDE_dparsf_AAL120';
 % Add the LEiDA_directory to the matlab path
 addpath(genpath(LEiDA_directory))
 
-%% ANALYSE K CENTROIDS SELECTED ACCORDING TO OUTPUT FROM LEiDA_Start
-
+%% B: PLOT STATE TIME COURSES FOR K CENTROIDS AND/OR A SPECIFIC SUBJECT
 % Close all open figures
 close all;
 
