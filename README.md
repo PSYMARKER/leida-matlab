@@ -14,7 +14,7 @@ This toolbox enables the neuroscience community to apply the Leading Eigenvector
 ## Installation of LEiDA Toolbox
 
 Start by creating a new folder where all the LEiDA code and analyses will be saved.
-Then to install the LEiDA Toolbox, simply unzip the folder downloaded from [this github repository](https://github.com/PSYCHOMARK/leida-matlab.git).
+Then to install the LEiDA Toolbox, simply unzip the folder downloaded from the [LEiDA Matlab Toolbox v1.0](https://github.com/PSYCHOMARK/leida-matlab/archive/refs/tags/v1.0.zip).
 
 > Note that the LEiDA Toolbox requires the Statistics and Machine Learning Matlab Toolbox.
 
