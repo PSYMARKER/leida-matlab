@@ -34,7 +34,7 @@ SelectK = 15;
 Subject = 0051466;
 
 % Directory of the LEiDA toolbox folder:
-LEiDA_directory = 'D:/LEiDA_Toolbox/';
+LEiDA_directory = 'D:/leida_toolbox/';
 % Name of the run to be used to create the folder to save the data:
 run_name = 'ABIDE_dparsf_AAL120';
 
@@ -53,7 +53,7 @@ close all;
 cd(LEiDA_directory)
 
 % Directory with the results from LEiDA
-leida_res = [LEiDA_directory 'LEiDA_Results_' run_name '/'];
+leida_res = [LEiDA_directory 'res_' run_name '/'];
 
 % Create a directory to store results for defined value of K
 if ~exist([leida_res 'K' num2str(SelectK) '/'], 'dir')

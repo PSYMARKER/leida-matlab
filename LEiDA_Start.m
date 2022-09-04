@@ -40,9 +40,9 @@ function LEiDA_Start
 %% A: STUDY PARAMETERS
 
 % Directory of the LEiDA toolbox folder:
-LEiDA_directory = 'D:/LEiDA_Toolbox/';
+LEiDA_directory = 'D:/leida_toolbox/';
 % Directory of the folder with the parcellated neuroimaging data:
-Data_directory = 'D:/LEiDA_Toolbox/ABIDE_dparsf_AAL120/';
+Data_directory = 'D:/leida_toolbox/ABIDE_dparsf_AAL120/';
 % Name of the run to be used to create the folder to save the data:
 run_name = 'ABIDE_dparsf_AAL120';
 % Tag of conditions given in the parcellated image files:
@@ -92,10 +92,10 @@ addpath(genpath(LEiDA_directory))
 cd(LEiDA_directory)
 
 % Create a directory to store the results from the current LEiDA run
-if ~exist([LEiDA_directory 'LEiDA_Results_' run_name '/'], 'dir')
-    mkdir([LEiDA_directory 'LEiDA_Results_' run_name '/']);
+if ~exist([LEiDA_directory 'res_' run_name '/'], 'dir')
+    mkdir([LEiDA_directory 'res_' run_name '/']);
 end
-leida_res = [LEiDA_directory 'LEiDA_Results_' run_name '/'];
+leida_res = [LEiDA_directory 'res_' run_name '/'];
 
 % Compute the leading eigenvectors of the data
 LEiDA_data(Data_directory,leida_res,N_areas,Tmax,apply_filter,flp,fhi,TR);

@@ -86,7 +86,7 @@ pvals = zeros(NC,2);
 
 parfor n=1:NC
     if sum(abs(data(n,g1)))>0 || sum(abs(data(n,g2)))>0  % Exclude tests where all (tstat=NaN) or most of the population (median=0) as a null value.
-        pvals(n,:) = tt_np_pval(data(n,:),g1,g2,niter,nboot,tvals(n),htest);
+        pvals(n,:) = tt_np_pval(data(n,:),g1,g2,niter,nboot,tvals(n));
      else
         disp('Data with lots of zeros!');
         pvals(n,:) = [NaN NaN];
