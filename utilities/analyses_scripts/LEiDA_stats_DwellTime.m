@@ -200,8 +200,13 @@ end
 save_file = 'LEiDA_Stats_DwellTime.mat';
 
 % Save K-means clustering solutions results:
-save([data_dir '/' save_file],'LT','LT_pval','LT_pval2sided', 'effectsize', 'levene_pval',...,
+if pair == 0
+    save([data_dir '/' save_file],'LT','LT_pval','LT_pval2sided', 'effectsize', 'levene_pval',...,
                               'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+else
+    save([data_dir '/' save_file],'LT','LT_pval','LT_pval2sided', 'effectsize',...,
+                              'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+end
 
 disp(' ')                          
 disp(['Dwell time values and results from permutation tests saved successfully as ' save_file])

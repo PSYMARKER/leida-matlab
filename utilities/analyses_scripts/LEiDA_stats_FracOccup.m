@@ -171,8 +171,13 @@ end
 save_file = 'LEiDA_Stats_FracOccup.mat';
 
 % Save K-means clustering solutions results:
-save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize', 'levene_pval',...,
-                              'cond','rangeK','file_cluster','file_V1','Index_Conditions','pair')
+if pair == 0
+    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize', 'levene_pval',...,
+                              'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+else
+    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize',...,
+                              'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+end
 
 disp(' ')
 disp(['Fractional occupancy values and results from permutation tests saved successfully as ' save_file])
