@@ -182,8 +182,14 @@ end
 % Name of the file to save output
 save_file = 'LEiDA_Stats_TransitionMatrix.mat';
 
-save([save_dir '/' save_file],'TM','TMnorm','TM_pval','TM_pval2sided','effectsize','levene_pval',...,
-                              'cond','rangeK','file_V1','file_cluster','file_P','Index_Conditions')
+% Save K-means clustering solutions results:
+if pair == 0
+    save([data_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize','levene_pval',...,
+                              'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+else
+    save([data_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize',...,
+                              'cond','rangeK','file_cluster','file_V1','Index_Conditions')
+end
 
 disp(' ')
 disp(['Transition probability values and results from permutation tests saved successfully as ' save_file])
