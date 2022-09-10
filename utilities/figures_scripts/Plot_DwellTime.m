@@ -80,19 +80,19 @@ for s_ind = 1:length(subplot_indices)
         for c = 1:rangeK(k)
             if LT_pval2sided(s_ind,k,c) > 0.05
                 semilogy(rangeK(k),LT_pval2sided(s_ind,k,c),'.k','Markersize',4);
-                % text(rangeK(k),P_pval2sided(s_ind,k,c),[' ' num2str(c)])
+                % text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
             end
             if LT_pval2sided(s_ind,k,c) < 0.05 && LT_pval2sided(s_ind,k,c) > (0.05/rangeK(k))
                 semilogy(rangeK(k),LT_pval2sided(s_ind,k,c),'+r','Markersize',4);
-                % text(rangeK(k),P_pval2sided(s_ind,k,c),[' ' num2str(c)])
+                % text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
             end
             if LT_pval2sided(s_ind,k,c) < (0.05/rangeK(k)) && LT_pval2sided(s_ind,k,c) > (0.05/sum(rangeK))
                 semilogy(rangeK(k),LT_pval2sided(s_ind,k,c),'og','Markersize',4);
-                % text(rangeK(k),P_pval2sided(s_ind,k,c),[' ' num2str(c)])
+                % text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
             end
             if LT_pval2sided(s_ind,k,c) <= (0.05/sum(rangeK))
                 semilogy(rangeK(k),LT_pval2sided(s_ind,k,c),'*b','Markersize',4);
-                % text(rangeK(k),P_pval2sided(s_ind,k,c),[' ' num2str(c)])
+                % text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
             end
         end
     end
