@@ -5,18 +5,18 @@ function Plot_DwellTime(data_dir)
 %
 % INPUT:
 % data_dir      directory where the results from running the hypothesis
-%               tests on the dwell time of FC states
+%               tests on the dwell time of PL states
 %
 % OUTPUT:
 % Fig1          plot of the two-sided p-values obtained across K from the
-%               comparison of the mean dwell time of FC states for each
+%               comparison of the mean dwell time of PL states for each
 %               pair of conditions
-% Fig2          barplot of the mean dwell time of each FC state for all
+% Fig2          barplot of the mean dwell time of each PL state for all
 %               conditions
-% Fig3          barplot of the mean dwell time of each FC state for each
+% Fig3          barplot of the mean dwell time of each PL state for each
 %               pair of conditions
 % Fig4          plot of the Hedge's effect size obtained across K from the
-%               comparison of the mean dwell time of FC states for each
+%               comparison of the mean dwell time of PL states for each
 %               pair of conditions
 %
 % Authors: Joana Cabral, University of Minho, joanacabral@med.uminho.pt
@@ -92,14 +92,14 @@ for s_ind = 1:length(subplot_indices)
             end
             if LT_pval2sided(s_ind,k,c) <= (0.05/sum(rangeK))
                 semilogy(rangeK(k),LT_pval2sided(s_ind,k,c),'*b','Markersize',4);
-                % text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
+                text(rangeK(k),LT_pval2sided(s_ind,k,c),[' ' num2str(c)])
             end
         end
     end
      
     title([cond{condRow(s_ind)} ' vs ' cond{condCol(s_ind)}],'interpreter','none')
     ylabel([{'Two-sided {\itp}-value'},{'Dwell Time'}])
-    xlabel('Number of FC States K')
+    xlabel('Number of PL States K')
     xticks([2 4 6 8 10 12 14 16 18 20])
     xlim([rangeK(1)-1 rangeK(end)+1])
     box off
@@ -117,7 +117,7 @@ if n_Cond > 2
     disp('Plotting barplot of the mean dwell time across conditions and K:')
     for k = 1:length(rangeK)
 
-        % disp(['- ' num2str(rangeK(k)) ' FC states'])
+        % disp(['- ' num2str(rangeK(k)) ' PL states'])
 
         for c = 1:rangeK(k)
 
@@ -243,7 +243,7 @@ for s_ind = 1:length(subplot_indices)
     
     title([cond{condRow(s_ind)} ' vs ' cond{condCol(s_ind)}],'interpreter','none')
     ylabel('Hedge''s effect size')
-    xlabel('Number of FC States K')
+    xlabel('Number of PL States K')
     xticks([2 4 6 8 10 12 14 16 18 20])
     xlim([rangeK(1)-1 rangeK(end)+1])
     box off
