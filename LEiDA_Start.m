@@ -81,11 +81,11 @@ Paired_tests = 0;
 % Number of permutations. For the first analysis to be relatively quick,
 % run around 500 permutations, but then increase to 10000 to increase the
 % reliability of the final statistical results (p-values) for publication.
-n_permutations = 5000;
+n_permutations = 500;
 % Number of bootstrap samples within each permutation. For the first
 % analysis to be relatively quick, choose around 10, but then increase to
 % 500 for more reliable final results.
-n_bootstraps = 1;
+n_bootstraps = 10;
 
 % For the figure of the pyramid of PL states:
 % Direction to plot the FC states/brain ('SideView' or 'TopView'):
