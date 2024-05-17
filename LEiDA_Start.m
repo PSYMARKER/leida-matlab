@@ -40,11 +40,11 @@ function LEiDA_Start
 %% A: STUDY PARAMETERS
 
 % Directory of the LEiDA toolbox folder:
-LEiDA_directory = 'D:/leida_toolbox/';
+LEiDA_directory = '/Users/vaniamiguel/Documents/leida-matlab-master';
 % Directory of the folder with the parcellated neuroimaging data:
-Data_directory = 'D:/leida_toolbox/ABIDE_dparsf_AAL120/';
+Data_directory = '/Users/vaniamiguel/Documents/leida-matlab-master/Time_series_folder/';
 % Name of the run to be used to create the folder to save the data:
-run_name = 'ABIDE_dparsf_AAL120';
+run_name = 'Tutorial_Results';
 % Tag of conditions given in the parcellated image files:
 Conditions_tag = {'CONT','AUT','ASP','PDD_NOS'};
 % Parcellation applied to the imaging data (see tutorial):
@@ -86,8 +86,6 @@ CortexDirection = 'SideView';
 % Add the LEiDA_directory to the matlab path
 addpath(genpath(LEiDA_directory))
 
-%% B: RUN LEADING EIGENVECTOR DYNAMICS ANALYSIS
-
 % Go to the directory containing the LEiDA functions
 cd(LEiDA_directory)
 
@@ -97,6 +95,7 @@ if ~exist([LEiDA_directory 'res_' run_name '/'], 'dir')
 end
 leida_res = [LEiDA_directory 'res_' run_name '/'];
 
+%% B: RUN LEADING EIGENVECTOR DYNAMICS ANALYSIS
 % Compute the leading eigenvectors of the data
 LEiDA_data(Data_directory,leida_res,N_areas,Tmax,apply_filter,flp,fhi,TR);
 
