@@ -61,6 +61,18 @@ apply_filter = 0;
 flp = 0.1;
 % Highpass frequency of filter (default 0.01):
 fhi = 0.01;
+% Set maximum/minimum number of clusters
+% Default values are set as default (change if needed):
+mink = 2; 
+maxk = 20;
+% Number of times the clustering is repeated to obtain the best solution. 
+% The default number of replicates is set and calculated proportionally 
+% to sample size. 
+% Can be set by the user here by uncommeting the following line:
+% replicates = 20;
+
+% Number of new initial cluster centroid positions to run
+% (it is convenient to run more replicates for larger samples)
 
 % For the statistics:
 % Choose 0 (unpaired) if subjects in different conditions are not the
@@ -86,36 +98,37 @@ CortexDirection = 'SideView';
 % Add the LEiDA_directory to the matlab path
 addpath(genpath(LEiDA_directory))
 
-%% B: RUN LEADING EIGENVECTOR DYNAMICS ANALYSIS
-
 % Go to the directory containing the LEiDA functions
 cd(LEiDA_directory)
 
 % Create a directory to store the results from the current LEiDA run
-if ~exist([LEiDA_directory 'res_' run_name '/'], 'dir')
-    mkdir([LEiDA_directory 'res_' run_name '/']);
+if ~exist([LEiDA_directory 'LEiDA_Results_' run_name '/'], 'dir')
+    mkdir([LEiDA_directory 'LEiDA_Results_' run_name '/']);
 end
-leida_res = [LEiDA_directory 'res_' run_name '/'];
+leida_results = [LEiDA_directory 'LEiDA_Results_' run_name '/'];
+
+
+%% B: RUN LEADING EIGENVECTOR DYNAMICS ANALYSIS
 
 % Compute the leading eigenvectors of the data
-LEiDA_data(Data_directory,leida_res,N_areas,Tmax,apply_filter,flp,fhi,TR);
+LEiDA_data(Data_directory,leida_results,N_areas,Tmax,apply_filter,flp,fhi,TR);
 
 % Cluster the leading eigenvectors of all subjects
-LEiDA_cluster(leida_res);
+LEiDA_cluster(leida_results, mink, maxk);
 
 % Compute the fractional occupancy and perform hypothesis tests
-LEiDA_stats_FracOccup(leida_res,Conditions_tag,Paired_tests,n_permutations,n_bootstraps);
+LEiDA_stats_FracOccup(leida_results,Conditions_tag,Paired_tests,n_permutations,n_bootstraps);
 
 % Compute the dwell time and perform hypothesis tests
-LEiDA_stats_DwellTime(leida_res,Conditions_tag,Paired_tests,TR,n_permutations,n_bootstraps);
+LEiDA_stats_DwellTime(leida_results,Conditions_tag,Paired_tests,TR,n_permutations,n_bootstraps);
 
 %% C: MAKE FIGURES
 
 % Generate and save the p-value and barplot plots for fractional occupancy
-Plot_FracOccup(leida_res)
+Plot_FracOccup(leida_results)
 
 % Generate and save the p-value and barplot plots for dwell time
-Plot_DwellTime(leida_res)
+Plot_DwellTime(leida_results)
 
 % Plot the centroids obtained using LEiDA and their overlap with Yeo nets
-Plot_Centroid_Pyramid(leida_res,Conditions_tag,Parcellation,N_areas,CortexDirection)
+Plot_Centroid_Pyramid(leida_results,Conditions_tag,Parcellation,N_areas,CortexDirection)

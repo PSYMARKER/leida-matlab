@@ -184,10 +184,10 @@ save_file = 'LEiDA_Stats_TransitionMatrix.mat';
 
 % Save K-means clustering solutions results:
 if pair == 0
-    save([data_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize','levene_pval',...,
+    save([save_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize','levene_pval', 'TM_pval2sided',...,
                               'cond','rangeK','file_cluster','file_V1','Index_Conditions')
 else
-    save([data_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize',...,
+    save([save_dir '/' save_file],'TM','TMnorm','TM_pval','effectsize','TM_pval2sided',...,
                               'cond','rangeK','file_cluster','file_V1','Index_Conditions')
 end
 

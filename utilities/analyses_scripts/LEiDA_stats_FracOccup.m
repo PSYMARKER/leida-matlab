@@ -172,10 +172,10 @@ save_file = 'LEiDA_Stats_FracOccup.mat';
 
 % Save K-means clustering solutions results:
 if pair == 0
-    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize', 'levene_pval',...,
+    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize', 'levene_pval', 'pair',...,
                               'cond','rangeK','file_cluster','file_V1','Index_Conditions')
 else
-    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize',...,
+    save([data_dir '/' save_file],'P','P_pval','P_pval2sided', 'effectsize',' pair',...,
                               'cond','rangeK','file_cluster','file_V1','Index_Conditions')
 end
 
