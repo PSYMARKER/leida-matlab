@@ -17,8 +17,8 @@ function [Kmeans_results,rangeK] = LEiDA_cluster(data_dir)
 disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CLUSTERING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
 
 % Set maximum/minimum number of clusters
-mink = 2;
-maxk = 20;
+% mink = 2;
+% maxk = 20;
 
 % File with leading eigenvectors (output from LEiDA_data.m)
 file_V1 = 'LEiDA_EigenVectors.mat';
@@ -34,7 +34,9 @@ Kmeans_results = cell(size(rangeK));
 
 % Number of new initial cluster centroid positions to run
 % (it is convenient to run more replicates for larger samples)
-replicates = ceil(50 + size(V1_all, 1)/300);
+if nargin < 4
+    replicates = ceil(50 + size(V1_all, 1)/300);
+end
 
 disp(' ');
 disp('Clustering eigenvectors into:')
