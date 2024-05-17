@@ -40,11 +40,11 @@ function LEiDA_Start
 %% A: STUDY PARAMETERS
 
 % Directory of the LEiDA toolbox folder:
-LEiDA_directory = '/Users/vaniamiguel/Documents/leida-matlab-master';
+LEiDA_directory = 'D:/leida_toolbox/';
 % Directory of the folder with the parcellated neuroimaging data:
-Data_directory = '/Users/vaniamiguel/Documents/leida-matlab-master/Time_series_folder/';
+Data_directory = 'D:/leida_toolbox/ABIDE_dparsf_AAL120/';
 % Name of the run to be used to create the folder to save the data:
-run_name = 'Tutorial_Results';
+run_name = 'ABIDE_dparsf_AAL120';
 % Tag of conditions given in the parcellated image files:
 Conditions_tag = {'CONT','AUT','ASP','PDD_NOS'};
 % Parcellation applied to the imaging data (see tutorial):
@@ -61,6 +61,18 @@ apply_filter = 0;
 flp = 0.1;
 % Highpass frequency of filter (default 0.01):
 fhi = 0.01;
+% Set maximum/minimum number of clusters
+% Default values are set as default (change if needed):
+mink = 2; 
+maxk = 20;
+% Number of times the clustering is repeated to obtain the best solution. 
+% The default number of replicates is set and calculated proportionally 
+% to sample size. 
+% Can be set by the user here by uncommeting the following line:
+% replicates = 20;
+
+% Number of new initial cluster centroid positions to run
+% (it is convenient to run more replicates for larger samples)
 
 % For the statistics:
 % Choose 0 (unpaired) if subjects in different conditions are not the
@@ -69,11 +81,11 @@ Paired_tests = 0;
 % Number of permutations. For the first analysis to be relatively quick,
 % run around 500 permutations, but then increase to 10000 to increase the
 % reliability of the final statistical results (p-values) for publication.
-n_permutations = 500;
+n_permutations = 5000;
 % Number of bootstrap samples within each permutation. For the first
 % analysis to be relatively quick, choose around 10, but then increase to
 % 500 for more reliable final results.
-n_bootstraps = 10;
+n_bootstraps = 1;
 
 % For the figure of the pyramid of PL states:
 % Direction to plot the FC states/brain ('SideView' or 'TopView'):
@@ -90,31 +102,33 @@ addpath(genpath(LEiDA_directory))
 cd(LEiDA_directory)
 
 % Create a directory to store the results from the current LEiDA run
-if ~exist([LEiDA_directory 'res_' run_name '/'], 'dir')
-    mkdir([LEiDA_directory 'res_' run_name '/']);
+if ~exist([LEiDA_directory 'LEiDA_Results_' run_name '/'], 'dir')
+    mkdir([LEiDA_directory 'LEiDA_Results_' run_name '/']);
 end
-leida_res = [LEiDA_directory 'res_' run_name '/'];
+leida_results = [LEiDA_directory 'LEiDA_Results_' run_name '/'];
+
 
 %% B: RUN LEADING EIGENVECTOR DYNAMICS ANALYSIS
+
 % Compute the leading eigenvectors of the data
-LEiDA_data(Data_directory,leida_res,N_areas,Tmax,apply_filter,flp,fhi,TR);
+LEiDA_data(Data_directory,leida_results,N_areas,Tmax,apply_filter,flp,fhi,TR);
 
 % Cluster the leading eigenvectors of all subjects
-LEiDA_cluster(leida_res);
+LEiDA_cluster(leida_results, mink, maxk);
 
 % Compute the fractional occupancy and perform hypothesis tests
-LEiDA_stats_FracOccup(leida_res,Conditions_tag,Paired_tests,n_permutations,n_bootstraps);
+LEiDA_stats_FracOccup(leida_results,Conditions_tag,Paired_tests,n_permutations,n_bootstraps);
 
 % Compute the dwell time and perform hypothesis tests
-LEiDA_stats_DwellTime(leida_res,Conditions_tag,Paired_tests,TR,n_permutations,n_bootstraps);
+LEiDA_stats_DwellTime(leida_results,Conditions_tag,Paired_tests,TR,n_permutations,n_bootstraps);
 
 %% C: MAKE FIGURES
 
 % Generate and save the p-value and barplot plots for fractional occupancy
-Plot_FracOccup(leida_res)
+Plot_FracOccup(leida_results)
 
 % Generate and save the p-value and barplot plots for dwell time
-Plot_DwellTime(leida_res)
+Plot_DwellTime(leida_results)
 
 % Plot the centroids obtained using LEiDA and their overlap with Yeo nets
-Plot_Centroid_Pyramid(leida_res,Conditions_tag,Parcellation,N_areas,CortexDirection)
+Plot_Centroid_Pyramid(leida_results,Conditions_tag,Parcellation,N_areas,CortexDirection)
