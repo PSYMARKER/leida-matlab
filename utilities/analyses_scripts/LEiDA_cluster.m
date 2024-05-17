@@ -1,4 +1,4 @@
-function [Kmeans_results,rangeK] = LEiDA_cluster(data_dir)
+function [Kmeans_results,rangeK] = LEiDA_cluster(data_dir, mink, maxk)
 %
 % Cluster all leading eigenvectors into a set of K clusters using
 % the K-means algorithm. 
