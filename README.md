@@ -196,7 +196,7 @@ For more detailed descriptions and applications, please refer to the following w
 ---
 
 ## License & copyright
-
+DOI: 10.5281/zenodo.14762824
 © Joana Cabral, University of Minho
 
 Licensed under the [MIT License](LICENSE).
